@@ -1,0 +1,223 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap'); */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+============================================================================
+  DESCORP — CENTRALIZED DESIGN SYSTEM
+  ---------------------------------------------------------------------------
+  EDIT COLORS HERE ONLY. Changes propagate across the entire site.
+  Replace the RGB triplets below to instantly re-theme the whole website.
+============================================================================
+*/
+:root {
+  /* PRIMARY — Pure Black (dark mode canvas — lets imagery standout) */
+  --color-primary: 0 0 0;               /* #000000 */
+  --color-primary-50: 0 0 0;
+  --color-primary-100: 5 5 6;
+  --color-primary-200: 10 10 12;        /* near-black section alt */
+  --color-primary-300: 18 18 21;
+  --color-primary-400: 28 28 32;
+  --color-primary-500: 38 38 44;
+  --color-primary-600: 52 52 58;
+  --color-primary-700: 72 72 78;
+  --color-primary-800: 100 100 108;
+  --color-primary-900: 140 140 148;
+
+  /* SECONDARY — Metallic Grey (text / structure / captions / borders) */
+  --color-secondary: 163 163 172;       /* #A3A3AC */
+  --color-secondary-50: 6 6 8;
+  --color-secondary-100: 248 248 250;
+  --color-secondary-200: 220 220 226;
+  --color-secondary-300: 190 190 198;
+  --color-secondary-400: 163 163 172;  /* #A3A3AC */
+  --color-secondary-500: 130 130 140;
+  --color-secondary-600: 100 100 110;
+  --color-secondary-700: 72 72 80;
+  --color-secondary-800: 44 44 50;
+  --color-secondary-900: 22 22 26;
+
+  /* ACCENT — Copper Orange (#D24A26) — used sparingly / strategically */
+  --color-accent: 210 74 38;            /* #D24A26 */
+  --color-accent-50: 251 240 235;
+  --color-accent-100: 247 224 214;
+  --color-accent-200: 239 190 170;
+  --color-accent-300: 228 148 118;
+  --color-accent-400: 220 96 64;
+  --color-accent-500: 210 74 38;       /* #D24A26 */
+  --color-accent-600: 180 60 28;
+  --color-accent-700: 148 48 22;
+  --color-accent-800: 112 36 16;
+  --color-accent-900: 80 26 12;
+
+  /* STATUS COLORS */
+  --color-success: 122 154 108;
+  --color-warning: 210 160 74;
+  --color-error: 210 74 38;
+}
+
+@layer base {
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    background-color: rgb(var(--color-primary));
+    color: rgb(var(--color-secondary));
+    font-family: theme('fontFamily.sans');
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: rgb(var(--color-accent));
+    color: white;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: rgb(var(--color-primary-200));
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgb(var(--color-secondary-700));
+    border-radius: 0;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(var(--color-accent));
+  }
+}
+
+@layer components {
+  .container-content {
+    @apply mx-auto w-full max-w-content px-gutter;
+  }
+
+  .glass-nav {
+    @apply backdrop-blur-xl;
+    background-color: rgb(var(--color-primary) / 0.65);
+    border-bottom: 1px solid rgb(var(--color-secondary) / 0.10);
+  }
+
+  .glass-nav-scrolled {
+    background-color: rgb(var(--color-primary) / 0.88);
+    border-bottom: 1px solid rgb(var(--color-secondary) / 0.16);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-sharp px-6 py-3.5 text-sm font-semibold uppercase tracking-wider transition-all duration-300 ease-precise;
+    background-color: rgb(var(--color-accent));
+    color: white;
+  }
+  .btn-primary:hover {
+    background-color: rgb(var(--color-accent-600));
+    box-shadow: 0 8px 24px rgb(var(--color-accent) / 0.4);
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-sharp px-6 py-3.5 text-sm font-semibold uppercase tracking-wider transition-all duration-300 ease-precise;
+    background-color: transparent;
+    color: rgb(var(--color-secondary));
+    border: 1px solid rgb(var(--color-secondary) / 0.25);
+  }
+  .btn-secondary:hover {
+    background-color: rgb(var(--color-secondary));
+    color: rgb(var(--color-primary));
+    transform: translateY(-2px);
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-3 text-eyebrow uppercase;
+    color: rgb(var(--color-accent));
+  }
+  .eyebrow::before {
+    content: '';
+    @apply h-px w-8;
+    background-color: rgb(var(--color-accent));
+  }
+
+  .grid-lines {
+    background-image:
+      linear-gradient(to right, rgb(var(--color-secondary) / 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(var(--color-secondary) / 0.05) 1px, transparent 1px);
+    background-size: 80px 80px;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+.article-content {
+  color: rgb(var(--color-secondary));
+  font-size: 1.125rem;
+  line-height: 2;
+}
+
+.article-content h2 {
+  margin-top: 4rem;
+  margin-bottom: 1.5rem;
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.article-content h3 {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  color: white;
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.article-content p {
+  margin-bottom: 1.75rem;
+}
+
+.article-content ul {
+  margin: 2rem 0;
+  padding-left: 1.5rem;
+  list-style: disc;
+}
+
+.article-content li {
+  margin-bottom: 0.75rem;
+}
+
+.article-content strong {
+  color: white;
+}
+
+.article-content a {
+  color: rgb(var(--color-accent));
+}
+
+.article-content blockquote {
+  margin: 2.5rem 0;
+  padding-left: 1.5rem;
+  border-left: 4px solid rgb(var(--color-accent));
+  color: white;
+  font-size: 1.25rem;
+  font-style: italic;
+}
