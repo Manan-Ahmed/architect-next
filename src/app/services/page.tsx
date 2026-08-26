@@ -3,7 +3,7 @@ import { Reveal } from '@/components/Reveal';
 import { Eyebrow } from '@/components/Layout';
 import { Button } from '@/components/Button';
 import { services, processSteps } from '@/data/content';
-
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Architecture & Interior Design Services",
