@@ -16,8 +16,8 @@ export function Hero() {
   priority
   loading="eager"
   fetchPriority="high"
-  quality={60}
-  sizes="(max-width: 640px) 100vw, (max-width: 1200px) 50vw, 33vw"
+  quality={50}
+  sizes="(max-width: 480px) 100vw, (max-width: 1200px) 50vw, 33vw"
   className="object-cover"
 />
 
