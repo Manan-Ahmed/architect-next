@@ -9,15 +9,15 @@ export function Hero() {
     >
       {/* Background image */}
       <div className="absolute inset-0">
-        <Image
+<Image
   src="/modern-banglo/banglo1.webp"
   alt="Modern architecture"
   fill
   priority
   loading="eager"
   fetchPriority="high"
-  quality={50}
-  sizes="(max-width: 480px) 100vw, (max-width: 1200px) 50vw, 33vw"
+  quality={75}
+  sizes="(max-width: 768px) 100vw, 100vw"
   className="object-cover"
 />
 
