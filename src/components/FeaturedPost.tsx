@@ -12,15 +12,15 @@ export default function FeaturedPost({ post }: FeaturedPostProps) {
     <article className="card-elevated group">
       <Link href={`/blog/${post.slug}`} className="block md:flex">
         <div className="relative overflow-hidden aspect-[16/10] md:w-1/2 md:aspect-auto">
-          <Image
-            src={post.coverImage}
+         
+<Image
+   src={post.coverImage}
             alt={post.title}
-            fill
-            loading="lazy"
-            sizes="(max-width: 640px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            className="image-cover image-hover-zoom"
-          />
-
+  fill
+  quality={50}
+  sizes="(max-width: 480px) 100vw, (max-width: 1200px) 50vw, 33vw"
+  className="object-cover transition-transform duration-700 ease-precise group-hover:scale-105"
+/>
           <div className="gradient-overlay transition-colors duration-500 group-hover:bg-black/70" />
 
           <div className="absolute top-6 left-6">
