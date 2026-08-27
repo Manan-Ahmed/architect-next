@@ -159,6 +159,14 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${montserrat.variable} ${jetbrainsMono.variable}`}
     >
+      <head>
+        <link
+          rel="preload"
+          as="image"
+          href="/modern-banglo/banglo1.webp"
+          type="image/webp"
+        />
+      </head>
       <body>
         <script
           type="application/ld+json"
