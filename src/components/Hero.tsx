@@ -10,7 +10,7 @@ export function Hero() {
       {/* Background image */}
       <div className="absolute inset-0">
 <Image
-  src="/modern-banglo/banglo1.webp"
+  src="/interior/1.webp"
   alt="Modern architecture"
   fill
   priority
