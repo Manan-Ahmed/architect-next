@@ -11,7 +11,7 @@ export function Hero() {
       <div className="absolute inset-0">
 <Image
   src="/interior/1.webp"
-  alt="Modern architecture"
+  alt="Modern interior"
   fill
   priority
   loading="eager"

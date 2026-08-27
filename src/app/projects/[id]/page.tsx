@@ -60,13 +60,7 @@ const [open, setOpen] = useState(false);
       <section 
        className=" relative h-[50vh] min-h-[350px] overflow-hidden bg-primary md:h-[55vh]"
        >
-        {/* <img
-          src={project.image}
-          alt={project.name}
-          
-         className= "h-full w-full object-cover"
-    
-        /> */}
+      
         <div className="relative h-full w-full">
   <Image
     src={project.image}
@@ -110,14 +104,7 @@ const [open, setOpen] = useState(false);
     
   <div className="container-content">
 
-   {/* <Reveal>
-    <div>
- <h2 className="-mt-20 mb-8 font-display text-2xl font-bold text-secondary md:text-2xl">
-    Experience the Living Farm House
-  </h2>
-    </div>
- 
-</Reveal> */}
+   
 
     <div className="mt-12 grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16"
     >
@@ -203,13 +190,13 @@ const [open, setOpen] = useState(false);
           {/* Overlay */}
           <div className="absolute inset-0 bg-black/20 opacity-0 transition group-hover:opacity-100" />
 
-    
-
-          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 px-3 py-1">
-  <span className="text-xs text-white text-center">
+    <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-max px-2 py-1">
+  <span className="whitespace-nowrap text-[8px] tracking-wide text-white drop-shadow-md sm:text-[10px]">
     © 2026 DESCORP. All Rights Reserved.
   </span>
 </div>
+
+      
         </div>
       ))}
     </div>
@@ -242,12 +229,7 @@ const [open, setOpen] = useState(false);
         </div>
       </section>
 
-      {/* <Lightbox
-  open={open}
-  close={() => setOpen(false)}
-  index={lightboxIndex}
-  slides={project.gallery.map((img) => ({ src: img }))}
-/> */}
+
 
 
 <Lightbox
@@ -255,25 +237,25 @@ const [open, setOpen] = useState(false);
   close={() => setOpen(false)}
   index={lightboxIndex}
   slides={project.gallery.map((img) => ({ src: img.src }))}
- render={{
-  slide: ({ slide }) => (
-    <div className="flex h-full w-full items-center justify-center">
-      <div className="relative h-fit w-fit">
-        <img
-          src={slide.src}
-          alt=""
-          className="block max-h-[90vh] max-w-[95vw] object-contain"
-        />
-
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 rounded-md bg-black/40 px-4 py-2 backdrop-blur-sm">
-          <span className="whitespace-nowrap text-xs tracking-wide text-white">
-            © 2026 DESCORP. All Rights Reserved.
-          </span>
+  render={{
+    slide: ({ slide }) => (
+      <div className="flex h-full w-full items-center justify-center px-2 sm:px-4">
+        <div className="relative flex h-fit w-fit max-w-full items-center justify-center">
+          <img
+            src={slide.src}
+            alt=""
+            className="block max-h-[80vh] max-w-[92vw] object-contain sm:max-h-[85vh] sm:max-w-[95vw] md:max-h-[90vh]"
+          />
+<div className="absolute bottom-2 left-1/2 -translate-x-1/2 px-2 py-1 sm:bottom-4 sm:px-4 sm:py-2 w-max">
+            <span className="whitespace-nowrap text-[8px] tracking-wide text-white drop-shadow-md sm:text-[10px]">
+              © 2026 DESCORP. All Rights Reserved.
+            </span>
+          </div>
+          
         </div>
       </div>
-    </div>
-  ),
-}}
+    ),
+  }}
 />
       
     </>
