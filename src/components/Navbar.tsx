@@ -38,7 +38,7 @@ export function Navbar() {
 
 <Link href="/" className="flex items-center gap-1">
 <Image
-  src="/DESCORP LOGO PNG.png"
+  src="/DESCORP LOGO.webp"
   alt="DESCORP Logo"
   width={88}
   height={88}
