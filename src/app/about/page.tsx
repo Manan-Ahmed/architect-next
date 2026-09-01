@@ -7,7 +7,7 @@ import { Stats, PhilosophyTeaser } from '@/components/Stats';
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Us",
+  title: "About DESCORP | Architecture & Interior Design Studio",
 
   description:
     "Learn about DESCORP, our design philosophy, expertise, and commitment to creating timeless architecture.",
