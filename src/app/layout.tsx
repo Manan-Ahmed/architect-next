@@ -28,8 +28,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://thedescorp.com"),
-
+  metadataBase: new URL("https://thedescorp.com")
   title: {
     default: "DESCORP | Luxury Architecture & Interior Design Studio",
     template: "%s | DESCORP",
@@ -57,6 +56,7 @@ export const metadata: Metadata = {
     {
       name: "DESCORP",
       url: "https://thedescorp.com",
+      
     },
   ],
   creator: "DESCORP",
@@ -115,6 +115,7 @@ const organizationSchema = {
   "@type": "Organization",
   name: "DESCORP",
   url: "https://thedescorp.com",
+  
   logo: "https://thedescorp.com/icon.png",
   description:
     "Luxury Architecture & Interior Design Studio.",
