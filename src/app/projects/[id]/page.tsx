@@ -19,10 +19,10 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 export default function ProjectDetailPage() {
-  const { id } = useParams<{ id: string }>();
-  const router = useRouter();
-  const project = projects.find((p) => p.id === id);
+  const { slug } = useParams<{ slug: string }>();
 
+  const router = useRouter();
+const project = projects.find((p) => p.slug === slug);
 
   if (!project) {
     return (
@@ -37,7 +37,8 @@ export default function ProjectDetailPage() {
     );
   }
 
-  const projectIndex = projects.findIndex((p) => p.id === id);
+  // const projectIndex = projects.findIndex((p) => p.id === id);
+  const projectIndex = projects.findIndex((p) => p.slug === slug);
 const nextProject = projects[(projectIndex + 1) % projects.length];
 
 const [lightboxIndex, setLightboxIndex] = useState(0);
@@ -208,7 +209,8 @@ const [open, setOpen] = useState(false);
       {/* Next project */}
       <section className="bg-primary-200 py-section">
         <div className="container-content">
-          <Link href={`/projects/${nextProject.id}`} className="group block">
+          {/* <Link href={`/projects/${nextProject.id}`} className="group block"> */}
+          <Link href={`/projects/${nextProject.slug}`} className="group block">
             <Reveal>
               <div className="flex flex-col items-start gap-4 md:flex-row md:items-center md:justify-between">
                 <div>
