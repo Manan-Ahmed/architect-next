@@ -28,8 +28,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-    metadataBase: new URL("https://thedescorp.com"),
-
+  metadataBase: new URL("https://thedescorp.com"),
   title: {
     default: "DESCORP | Luxury Architecture & Interior Design Studio",
     template: "%s | DESCORP",
@@ -53,13 +52,14 @@ export const metadata: Metadata = {
     "DESCORP",
   ],
 
-   authors: [
+  authors: [
     {
       name: "DESCORP",
       url: "https://thedescorp.com",
+      
     },
   ],
-    creator: "DESCORP",
+  creator: "DESCORP",
 
   publisher: "DESCORP",
 
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     canonical: "/",
   },
 
-    robots: {
+  robots: {
     index: true,
     follow: true,
     googleBot: {
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
-   openGraph: {
+  openGraph: {
     type: "website",
     url: "https://thedescorp.com",
     title: "DESCORP | Luxury Architecture & Interior Design Studio",
@@ -96,7 +96,7 @@ export const metadata: Metadata = {
     ],
   },
 
-    twitter: {
+  twitter: {
     card: "summary_large_image",
     title: "DESCORP | Luxury Architecture & Interior Design Studio",
     description:
@@ -104,21 +104,18 @@ export const metadata: Metadata = {
     images: ["/DESCORP LOGO PNG.png"],
   },
 
-  // icons: {
-  //   icon: "/favicon..png",
-  //   shortcut: "/favicon.ico",
-  //   apple: "/apple-touch-icon.png",
-  // },
   icons: {
-  icon: "/favicon.ico",
-  apple: "/apple-touch-icon.png",
-},
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
 };
+
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "DESCORP",
   url: "https://thedescorp.com",
+  
   logo: "https://thedescorp.com/icon.png",
   description:
     "Luxury Architecture & Interior Design Studio.",
@@ -129,6 +126,7 @@ const organizationSchema = {
     "https://www.youtube.com/"
   ]
 };
+
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
@@ -151,16 +149,6 @@ const architectSchema = {
   areaServed: "Worldwide",
   email: "info@thedescorp.com",
 };
-//   // title: "DESCORP — Architecture & Interior Design Studio",
-//   // description:
-//   //   "DESCORP is a global architecture and interior design studio crafting precision-built, futuristic spaces that define luxury.",
-//   openGraph: {
-//     images: ["/DESCORP LOGO PNG.png"],
-//   },
-//   twitter: {
-//     card: "summary_large_image",
-//   },
-// };
 
 export default function RootLayout({
   children,
@@ -168,45 +156,46 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      {/* <body>
+    <html
+      lang="en"
+      className={`${inter.variable} ${montserrat.variable} ${jetbrainsMono.variable}`}
+    >
+      <head>
+        <link
+          rel="preload"
+          as="image"
+          href="/modern-banglo/banglo1.webp"
+          type="image/webp"
+        />
+      </head>
+      <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteSchema),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(architectSchema),
+          }}
+        />
+        
         <ScrollToTop />
+
         <div className="min-h-screen bg-primary text-secondary">
           <Navbar />
           <main>{children}</main>
           <Footer />
         </div>
-      </body> */}
-      <body
-  className={`${inter.variable} ${montserrat.variable} ${jetbrainsMono.variable}`}
->
-  <script
-    type="application/ld+json"
-    dangerouslySetInnerHTML={{
-      __html: JSON.stringify(organizationSchema),
-    }}
-  />
-<script
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{
-    __html: JSON.stringify(websiteSchema),
-  }}
-/>
-
-<script
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{
-    __html: JSON.stringify(architectSchema),
-  }}
-/>
-  <ScrollToTop />
-
-  <div className="min-h-screen bg-primary text-secondary">
-    <Navbar />
-    <main>{children}</main>
-    <Footer />
-  </div>
-</body>
+      </body>
     </html>
   );
 }

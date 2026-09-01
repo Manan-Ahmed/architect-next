@@ -1,6 +1,3 @@
-
-
-
 import Image from "next/image";
 import { Button } from "./Button";
 
@@ -12,15 +9,17 @@ export function Hero() {
     >
       {/* Background image */}
       <div className="absolute inset-0">
-        <Image
-          src="/modern-banglo/banglo1.webp"
-          alt="Modern architecture"
-          fill
-          priority
-          quality={90}
-          sizes="100vw"
-          className="object-cover"
-        />
+<Image
+  src="/interior/1.webp"
+  alt="Modern interior"
+  fill
+  priority
+  loading="eager"
+  fetchPriority="high"
+  quality={75}
+  sizes="(max-width: 768px) 100vw, 100vw"
+  className="object-cover"
+/>
 
         <div className="absolute inset-0 bg-primary/60" />
 
@@ -39,31 +38,22 @@ export function Hero() {
       {/* Content */}
       <div className="container-content relative z-10 pt-20">
         <div className="max-w-3xl">
-          <div
-            className="animate-fade-up"
-            style={{ animationDelay: "0.1s", opacity: 0 }}
-          >
+          <div>
             <span className="eyebrow text-accent">
               <span className="h-px w-8 bg-accent" />
               Architecture, Interior Design & Turn-Key Solutions
             </span>
           </div>
 
-          <h1
-            className="mt-6 font-display text-display-1 text-secondary-100 animate-fade-up"
-            style={{ animationDelay: "0.25s", opacity: 0 }}
-          >
+          {/* Heading without delay/opacity lock */}
+          <h1 className="mt-6 font-display text-display-1 text-secondary-100">
             The Art
             <br />
             of Building
             <span className="text-accent"> Tomorrow.</span>
           </h1>
 
-
-          <p
-            className="mt-8 max-w-xl text-base leading-relaxed text-secondary/80 animate-fade-up md:text-lg"
-            style={{ animationDelay: "0.4s", opacity: 0 }}
-          >
+          <p className="mt-8 max-w-xl text-base leading-relaxed text-secondary/80 md:text-lg">
             We design and deliver exceptional architecture, luxury interiors,
             construction, project management, and complete turn-key solutions
             with enduring precision. From concept development and planning to
@@ -71,11 +61,7 @@ export function Hero() {
             craftsmanship, and a bold futuristic vision.
           </p>
 
-
-          <div
-            className="mt-10 flex flex-wrap gap-4 animate-fade-up mb-4"
-            style={{ animationDelay: "0.55s", opacity: 0 }}
-          >
+          <div className="mt-10 flex flex-wrap gap-4 mb-4">
             <Button variant="primary" to="/projects">
               View Projects
             </Button>

@@ -37,15 +37,14 @@ export function Navbar() {
        <div className="container-content relative flex h-16 items-center justify-between md:h-20">
 
 <Link href="/" className="flex items-center gap-1">
-  <Image
-    src="/DESCORP LOGO PNG.png"
-    alt="DESCORP Logo"
-    width={180}
-    height={50}
-    priority
-    className="h-[50px] w-auto object-contain"
-  />
-
+<Image
+  src="/DESCORP LOGO.webp"
+  alt="DESCORP Logo"
+  width={88}
+  height={88}
+  quality={70}
+  className="h-[50px] w-auto object-contain"
+/>
   <span className="flex items-center font-display text-xl tracking-wider text-white">
     DESCORP
   </span>

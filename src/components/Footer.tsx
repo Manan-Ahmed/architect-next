@@ -41,7 +41,7 @@ export function Footer() {
           
                <Link href="/" className="flex items-center gap-1 p-0">
           <img
-            src="/DESCORP LOGO PNG.png"
+            src="/DESCORP LOGO.webp"
             alt="Descorp"
             className="h-[60px] w-auto object-contain"
           />

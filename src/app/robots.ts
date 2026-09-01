@@ -10,7 +10,5 @@ export default function robots(): MetadataRoute.Robots {
     ],
 
     sitemap: "https://thedescorp.com/sitemap.xml",
-
-    host: "https://thedescorp.com",
   };
 }
