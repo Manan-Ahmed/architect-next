@@ -11,6 +11,7 @@ import {
 
 export type Project = {
   id: string;
+  slug: string;
   name: string;
   category: 'Residential' | 'Commercial' | 'Interior';
   location: string;
@@ -63,6 +64,7 @@ export type Award = {
 export const projects: Project[] = [
   {
     id: 'p1',
+   slug: 'the-palm-haus',
     name: 'The Palm Haus',
     category: 'Residential',
     location: 'Karachi, Pakistan',
@@ -91,6 +93,7 @@ export const projects: Project[] = [
   },
   {
     id: 'p2',
+          slug: 'bungalow',
     name: 'Bungalow',
     category: 'Residential',
     location: 'DHA, Karachi',
@@ -128,6 +131,7 @@ description: 'A contemporary private residence designed for a small family on a 
   },
     {
     id: 'p3',
+          slug: 'interior-apartment',
     name: 'Apartment',
     category: 'Interior',
     location: 'Karachi',
@@ -149,6 +153,7 @@ description: 'A contemporary private residence designed for a small family on a 
   },
   {
     id: 'p4',
+        slug: 'hotel-saddar-karachi',
     name: 'Hotel',
     category: 'Commercial',
     location: 'Saddar, Karachi',
