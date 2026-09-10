@@ -167,6 +167,7 @@ export default function RootLayout({
           href="/modern-banglo/banglo1.webp"
           type="image/webp"
         />
+        <meta name="p:domain_verify" content="7324c15085c245bd0905be7b0f218492"/>
       </head>
       <body>
         <script
