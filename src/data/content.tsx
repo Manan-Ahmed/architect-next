@@ -64,7 +64,7 @@ export type Award = {
 export const projects: Project[] = [
   {
     id: 'p1',
-   slug: 'the-palm-haus',
+    slug: 'the-palm-haus',
     name: 'The Palm Haus',
     category: 'Residential',
     location: 'Karachi, Pakistan',
@@ -93,7 +93,11 @@ export const projects: Project[] = [
   },
   {
     id: 'p2',
+<<<<<<< HEAD
           slug: 'bungalow',
+=======
+    slug: 'banglow',
+>>>>>>> 9560a80 (slug-changes)
     name: 'Bungalow',
     category: 'Residential',
     location: 'DHA, Karachi',
@@ -131,7 +135,11 @@ description: 'A contemporary private residence designed for a small family on a 
   },
     {
     id: 'p3',
+<<<<<<< HEAD
           slug: 'interior-apartment',
+=======
+    slug: 'interior-apartment',
+>>>>>>> 9560a80 (slug-changes)
     name: 'Apartment',
     category: 'Interior',
     location: 'Karachi',
@@ -153,7 +161,11 @@ description: 'A contemporary private residence designed for a small family on a 
   },
   {
     id: 'p4',
+<<<<<<< HEAD
         slug: 'hotel-saddar-karachi',
+=======
+    slug: 'hotel-saddar-karachi',
+>>>>>>> 9560a80 (slug-changes)
     name: 'Hotel',
     category: 'Commercial',
     location: 'Saddar, Karachi',
