@@ -32,9 +32,10 @@ export type Project = {
 
 
 
+
 import type { ElementType } from 'react';
 
-type Service = {
+ type Service = {
   id: string;
   slug: string;
   title: string;
@@ -77,9 +78,12 @@ type Service = {
     description: string;
     features: string[];
   }[];
-  serviceArea?: string;
+    serviceArea?: string;
   areaServed?: string[];
 };
+
+
+
 export type TeamMember = {
   name: string;
   role: string;

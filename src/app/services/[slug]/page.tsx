@@ -77,7 +77,7 @@ export default async function ServiceDetailPage({ params }: Props) {
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: service.faqs.map((faq) => ({
+      mainEntity: (service.faqs ?? []).map((faq) => ({
       '@type': 'Question',
       name: faq.question,
       acceptedAnswer: {
@@ -400,7 +400,7 @@ const breadcrumbSchema = {
           </Reveal>
 
           <div className="mt-10 space-y-px bg-secondary/10">
-            {service.faqs.map((faq, i) => (
+              {service.faqs?.map((faq, i) => (
               <Reveal key={faq.question} delay={(i % 3) * 80}>
                 <div className="bg-primary p-7 md:p-8">
                   <h3 className="font-display text-lg font-bold text-secondary">{faq.question}</h3>
