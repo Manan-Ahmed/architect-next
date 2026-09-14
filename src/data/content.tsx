@@ -32,11 +32,57 @@ export type Project = {
 
 
 
+// type Service = {
+//   // ...existing fields
+//   credentials?: {
+//     summary: string;
+//     badges: { label: string; detail: string }[];
+//   };
+//   portfolioPreview?: {
+//     title: string;
+//     image: string;
+//     location?: string;
+//     href?: string;
+//   }[];
+//   testimonials?: {
+//     name: string;
+//     quote: string;
+//     project: string;
+//     rating?: number; // default 5
+//   }[];
+//   packages?: {
+//     name: string;
+//     startingPrice: string;
+//     description: string;
+//     features: string[];
+//   }[];
+//     serviceArea?: string;
+//   areaServed?: string[]
+// };
 type Service = {
-  // ...existing fields
+  id: string;
+  slug: string;
+  title: string;
+  description: string;
+  icon: React.ElementType;
+  details: string[];
+  overview: string;
+  metaDescription: string;
+  howItWorks: {
+    title: string;
+    description: string;
+  }[];
+  scopeNote?: string;
+  faqs?: {
+    question: string;
+    answer: string;
+  }[];
   credentials?: {
     summary: string;
-    badges: { label: string; detail: string }[];
+    badges: {
+      label: string;
+      detail: string;
+    }[];
   };
   portfolioPreview?: {
     title: string;
@@ -48,7 +94,7 @@ type Service = {
     name: string;
     quote: string;
     project: string;
-    rating?: number; // default 5
+    rating?: number;
   }[];
   packages?: {
     name: string;
@@ -56,10 +102,9 @@ type Service = {
     description: string;
     features: string[];
   }[];
-    serviceArea?: string;
-  areaServed?: string[]
+  serviceArea?: string;
+  areaServed?: string[];
 };
-
 
 export type TeamMember = {
   name: string;
