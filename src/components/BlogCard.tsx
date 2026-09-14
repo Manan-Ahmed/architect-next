@@ -86,10 +86,10 @@ export default function BlogCard({
 
             <span>{post.date}</span>
 
-            <span className="flex items-center gap-1">
+            {/* <span className="flex items-center gap-1">
               <Clock size={14} />
               {post.readTime}
-            </span>
+            </span> */}
 
           </div>
 

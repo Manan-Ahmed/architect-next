@@ -9,12 +9,16 @@ const footerLinks = {
     { label: 'Projects', to: '/projects' },
     { label: 'Contact', to: '/contact' },
   ],
-  Services: [
-    { label: 'Architectural Design', to: '/services' },
-    { label: 'Interior Design', to: '/services' },
-    { label: 'Renovation', to: '/services' },
-    { label: 'Master Planning', to: '/services' },
-  ],
+ Services: [
+  { label: 'Architectural Design', to: '/services/architectural-design' },
+  { label: 'Interior Design', to: '/services/interior-design' },
+  { label: 'Renovation', to: '/services/building-renovation' },
+  { label: 'Project Management', to: '/services/project-management' },
+
+  { label: 'USA Remote Architectural Consultation', to: '/usa/remote-architecture-consultation' },
+  { label: 'USA Remote Interior Design Consultation', to: '/usa/remote-interior-design-consultation' },
+  { label: '3D Visualization', to: '/usa/remote-3d-visualization' },
+],
   Contact: [
     { label: 'info@thedescorp.com', to: '/contact' },
     { label: '+92 334 6699001', to: '/contact' },

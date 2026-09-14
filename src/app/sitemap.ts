@@ -1,9 +1,41 @@
 import { MetadataRoute } from "next";
+import { services } from "@/data/content";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://thedescorp.com";
 
+  const servicePages: MetadataRoute.Sitemap = services.map((service) => ({
+    url: `${baseUrl}/services/${service.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly",
+    priority: 0.85,
+  }));
+
+  const usaServicePages: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/usa/remote-architecture-consultation`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/usa/remote-interior-design`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/usa/remote-3d-visualization`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+  ];
+
   return [
+    ...servicePages,
+    ...usaServicePages,
+
     {
       url: baseUrl,
       lastModified: new Date(),
@@ -33,6 +65,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/usa`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.85,
     },
     {
       url: `${baseUrl}/contact`,

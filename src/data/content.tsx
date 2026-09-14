@@ -6,7 +6,7 @@ import {
   FileCheck,
   Box,
   ClipboardList,
-  Map,
+  Map,Video,Ruler,
 } from 'lucide-react';
 
 export type Project = {
@@ -30,13 +30,36 @@ export type Project = {
   subtitle?: string;
 };
 
-export type Service = {
-  id: string;
-  title: string;
-  description: string;
-  icon: typeof PencilRuler;
-  details: string[];
+
+
+type Service = {
+  // ...existing fields
+  credentials?: {
+    summary: string;
+    badges: { label: string; detail: string }[];
+  };
+  portfolioPreview?: {
+    title: string;
+    image: string;
+    location?: string;
+    href?: string;
+  }[];
+  testimonials?: {
+    name: string;
+    quote: string;
+    project: string;
+    rating?: number; // default 5
+  }[];
+  packages?: {
+    name: string;
+    startingPrice: string;
+    description: string;
+    features: string[];
+  }[];
+    serviceArea?: string;
+  areaServed?: string[]
 };
+
 
 export type TeamMember = {
   name: string;
@@ -57,14 +80,11 @@ export type Award = {
   organization: string;
 };
 
-/**
- * Single source of truth for portfolio imagery.
- * Uses Pexels stock architecture/interior photography.
- */
+
 export const projects: Project[] = [
   {
     id: 'p1',
-    slug: 'the-palm-haus',
+   slug: 'the-palm-haus',
     name: 'The Palm Haus',
     category: 'Residential',
     location: 'Karachi, Pakistan',
@@ -93,11 +113,59 @@ export const projects: Project[] = [
   },
   {
     id: 'p2',
-<<<<<<< HEAD
+        slug: 'hotel-saddar-karachi',
+    name: 'Hotel',
+    category: 'Commercial',
+    location: 'Saddar, Karachi',
+    year: '2024',
+    image: '/commercial/1.webp',
+    description: 'A G+5 hospitality project located in Saddar, Karachi, developed on a narrow and elongated 320-square-yard plot with a limited 30-foot frontage. The primary architectural challenge was to create a distinctive hotel identity within a constrained footprint while integrating a terrace, strong street presence, and a contemporary façade. The elevation was conceived through a massing-based approach, defined by a bold interplay of solid and void. This composition creates depth, rhythm, and visual prominence while establishing a strong modern identity within the surrounding commercial context. Durable architectural coatings further reinforce the building’s contemporary character. The interiors follow a minimal and functional hospitality-driven approach, creating a consistent, calm, and uncluttered environment for guests. The design prioritizes efficiency, comfort, and visual continuity across the hotel while maintaining a refined contemporary character.',
+        gallery: [
+                    { src: '/commercial/1.webp' },
+
+          { src: '/commercial/1night.webp' },
+                    { src: '/commercial/2.webp',orientation: 'portrait' },
+                    { src: '/commercial/2night.webp',orientation: 'portrait' },
+                     { src: '/commercial/10.webp',orientation: 'portrait'},
+                     { src: '/commercial/11night.webp',orientation: 'portrait'},
+ { src: '/commercial/3.webp'},
+                    { src: '/commercial/3night.webp'},
+{ src: '/commercial/4.webp'},
+                    { src: '/commercial/4night.webp'},
+                     { src: '/commercial/5.webp'},
+{ src: '/commercial/5night.webp'},
+        ],
+    client: 'Private',
+    area: '320 sq.yds.',
+    status: 'Completed',
+    scope: ['Architectural Design', 'Interior Design', 'Project Management'],
+  },
+   {
+    id: 'p3',
+          slug: 'interior-apartment',
+    name: 'Apartment',
+    category: 'Interior',
+    location: 'Karachi',
+    year: '2024',
+    image: '/interior/1.webp',
+    description: 'A thoughtfully curated 1,400 sq. ft. three-bedroom apartment with drawing and dining spaces, complemented by a private rooftop retreat. Originally purchased in builder condition, the residence was transformed through a bespoke interior design approach tailored to the family’s lifestyle, spatial requirements, and personal preferences. The interiors follow a contemporary, Scandinavian-inspired design language, defined by clean modern lines, warm tonal layering, and natural textures. A restrained material palette and carefully considered detailing create a sense of minimalism without compromising on character or sophistication. Each space was designed to feel calm, functional, and refined, with custom elements and subtle contrasts adding depth to the otherwise understated aesthetic. The result is an elegant family residence that balances everyday practicality with a distinctly personal sense of warmth and luxury.',
+            gallery: [
+                    // { src: '/interior/1.webp' },
+
+                    { src: '/interior/2.webp' },
+                    { src: '/interior/3.webp' },
+                     { src: '/interior/4.webp'},
+                     { src: '/interior/5.webp'},
+        ],
+    client: 'Private',
+    area: '500 sq.yds.',
+    status: 'Completed',
+    scope: ['Interior Design'],
+  },
+  
+  {
+    id: 'p4',
           slug: 'bungalow',
-=======
-    slug: 'banglow',
->>>>>>> 9560a80 (slug-changes)
     name: 'Bungalow',
     category: 'Residential',
     location: 'DHA, Karachi',
@@ -133,133 +201,147 @@ description: 'A contemporary private residence designed for a small family on a 
     status: 'Completed',
     scope: ['Architecture', 'Interior Design', 'Project Management'],
   },
-    {
-    id: 'p3',
-<<<<<<< HEAD
-          slug: 'interior-apartment',
-=======
-    slug: 'interior-apartment',
->>>>>>> 9560a80 (slug-changes)
-    name: 'Apartment',
-    category: 'Interior',
-    location: 'Karachi',
-    year: '2024',
-    image: '/interior/1.webp',
-    description: 'A thoughtfully curated 1,400 sq. ft. three-bedroom apartment with drawing and dining spaces, complemented by a private rooftop retreat. Originally purchased in builder condition, the residence was transformed through a bespoke interior design approach tailored to the family’s lifestyle, spatial requirements, and personal preferences. The interiors follow a contemporary, Scandinavian-inspired design language, defined by clean modern lines, warm tonal layering, and natural textures. A restrained material palette and carefully considered detailing create a sense of minimalism without compromising on character or sophistication. Each space was designed to feel calm, functional, and refined, with custom elements and subtle contrasts adding depth to the otherwise understated aesthetic. The result is an elegant family residence that balances everyday practicality with a distinctly personal sense of warmth and luxury.',
-            gallery: [
-                    // { src: '/interior/1.webp' },
-
-                    { src: '/interior/2.webp' },
-                    { src: '/interior/3.webp' },
-                     { src: '/interior/4.webp'},
-                     { src: '/interior/5.webp'},
-        ],
-    client: 'Private',
-    area: '500 sq.yds.',
-    status: 'Completed',
-    scope: ['Interior Design'],
-  },
-  {
-    id: 'p4',
-<<<<<<< HEAD
-        slug: 'hotel-saddar-karachi',
-=======
-    slug: 'hotel-saddar-karachi',
->>>>>>> 9560a80 (slug-changes)
-    name: 'Hotel',
-    category: 'Commercial',
-    location: 'Saddar, Karachi',
-    year: '2024',
-    image: '/commercial/1.webp',
-    description: 'A G+5 hospitality project located in Saddar, Karachi, developed on a narrow and elongated 320-square-yard plot with a limited 30-foot frontage. The primary architectural challenge was to create a distinctive hotel identity within a constrained footprint while integrating a terrace, strong street presence, and a contemporary façade. The elevation was conceived through a massing-based approach, defined by a bold interplay of solid and void. This composition creates depth, rhythm, and visual prominence while establishing a strong modern identity within the surrounding commercial context. Durable architectural coatings further reinforce the building’s contemporary character. The interiors follow a minimal and functional hospitality-driven approach, creating a consistent, calm, and uncluttered environment for guests. The design prioritizes efficiency, comfort, and visual continuity across the hotel while maintaining a refined contemporary character.',
-        gallery: [
-                    { src: '/commercial/1.webp' },
-
-          { src: '/commercial/1night.webp' },
-                    { src: '/commercial/2.webp',orientation: 'portrait' },
-                    { src: '/commercial/2night.webp',orientation: 'portrait' },
-                     { src: '/commercial/10.webp',orientation: 'portrait'},
-                     { src: '/commercial/11night.webp',orientation: 'portrait'},
- { src: '/commercial/3.webp'},
-                    { src: '/commercial/3night.webp'},
-{ src: '/commercial/4.webp'},
-                    { src: '/commercial/4night.webp'},
-                     { src: '/commercial/5.webp'},
-{ src: '/commercial/5night.webp'},
-        ],
-    client: 'Private',
-    area: '500 sq.yds.',
-    status: 'Completed',
-    scope: ['Architectural Design', 'Interior Design', 'Project Management'],
-  },
+   
  
   
 ];
 
 export const services: Service[] = [
-  {
-    id: 's1',
-    title: 'Architectural Consultation',
-    description: 'Strategic advisory on feasibility, site potential, and design direction before a single line is drawn.',
-    icon: PencilRuler,
-    details: ['Site feasibility analysis', 'Programmatic studies', 'Budget benchmarking', 'Design direction workshops'],
-  },
-  {
-    id: 's2',
-    title: 'Architectural Design',
-    description: 'End-to-end architectural design from concept through construction documents, engineered for precision.',
-    icon: Box,
-    details: ['Concept design', 'Schematic design', 'Design development', 'Construction documents'],
-  },
-  {
-    id: 's3',
-    title: 'Custom Home Design',
-    description: 'Bespoke residences crafted around your lifestyle, site, and vision — never repeated, always singular.',
-    icon: Home,
-    details: ['Site-responsive design', 'Lifestyle programming', 'Custom material palettes', 'Landscape integration'],
-  },
+  
+{
+  id: 's1',
+  slug: 'architectural-design',
+  title: 'Architectural Design',
+  serviceArea: 'On-Site & Studio Service · Pakistan',   
+  areaServed: ['Pakistan'],
+  description: 'Bespoke structural blueprints and elevation concepts engineered for Pakistan’s climate and zoning laws.',
+  icon: Home, 
+  details: ['Zoning & SBCA compliance', 'Space planning & zoning', 'Structural & MEP drawings', '3D elevation design'],
+  overview:
+    'Great architecture blends form with regional functionality. For our projects in Pakistan, DESCORP creates luxury residential and commercial architecture tailored to the local climate, plot dynamics, and local building authorities. We deliver comprehensive, buildable blueprint sets—including structural, electrical, and plumbing layouts—while conducting regular site visits to ensure the masonry matches our exact vision.',
+  metaDescription:
+    'Top architectural design services in Karachi, Pakistan. DESCORP delivers luxury house plans, 3D front elevations, and SBCA approved technical blueprints.',
+  howItWorks: [
+    { title: 'Site Analysis & Zoning', description: 'We conduct physical site surveys and verify local regulatory boundaries (SBCA/LDA/DHA bylaws).' },
+    { title: 'Conceptual Schematics', description: 'We present initial space planning layouts, floor plans, and 3D front elevation concepts for your review.' },
+    { title: 'Technical Documentation', description: 'We compile comprehensive structural, mechanical, electrical, and plumbing (MEP) working blueprints.' },
+    { title: 'Site Inspection Visits', description: 'Our architects visit the site at crucial milestones (foundation, layout, layout marking, slab casting) to verify execution.' },
+  ],
+  scopeNote:
+    'DESCORP provides complete architectural, structural, and engineering design layouts. Official authority submission fees and physical construction labor are managed separately, though we provide complete support to ensure your contractor executes the plans accurately.',
+  faqs: [
+    { question: 'Do your architectural designs comply with local authorities like SBCA or DHA?', answer: 'Yes, absolutely. All our architectural blueprints and structural layouts are engineered strictly according to the specific zoning bylaws, setbacks, and structural regulations of the relevant local authority.' },
+    { question: 'Will the architect visit the site during the initial construction phases?', answer: 'Yes. For all architecture projects in Pakistan, our design team schedules physical site visits during critical milestones—such as layout marking on the ground and slab casting—to cross-check dimensions and design accuracy.' },
+  ],
+},
+
+{
+  id: 's5',
+  slug: 'interior-design',
+  title: 'Interior Design',
+  description: 'Complete interior environments where premium materiality, custom millwork, and lighting compose a unified whole.',
+  icon: Sofa,
+  details: ['Space planning', 'Material specification', 'Custom millwork & furniture', 'Lighting design'],
+  overview:
+    'Every space tells a story. We craft high-end interiors that reflect your lifestyle, translated into detailed layouts, curated material palettes, and photorealistic 3D renders. For our Pakistan-based clients, we do not just design digitally; we coordinate with local vendors and oversee the implementation to ensure our vision is flawlessly executed on-site.',
+  metaDescription:
+    'Premium interior design services in Karachi, Pakistan. DESCORP offers custom millwork, luxury material sourcing, space planning, and turnkey design execution.',
+  howItWorks: [
+    { title: 'Site Survey & Consultation', description: 'We conduct a detailed physical inspection and measure your space on-site in Karachi.' },
+    { title: 'Concept & Mood Boards', description: 'We present physical material samples and design direction layouts at our studio or your site.' },
+    { title: 'Detailed 3D Renders', description: 'Photorealistic 3D visualizations and space planning layouts are developed with your feedback.' },
+    { title: 'Vendor Coordination', description: 'We provide working drawings and coordinate with local site teams for exact design execution.' },
+  ],
+  scopeNote:
+    'DESCORP provides complete interior design layouts, 3D visualizations, and strict material specifications. While physical procurement and labor installation are billed separately, our team provides necessary quality checks to ensure precise on-site execution.',
+  faqs: [
+    { question: 'Do you visit the site in person for interior design projects?', answer: 'Yes, absolutely. For all interior design projects in Karachi, our team conducts in-person site visits for initial measurements, layout analysis, and regular execution quality checks.' },
+    { question: 'Do you manufacture custom furniture and millwork?', answer: 'We design custom furniture, wardrobes, and kitchen cabinetry, and work with trusted local manufacturing workshops to fabricate these elements according to exact project standards.' },
+  ],
+},
+
+
+
+  
   {
     id: 's4',
+    slug: 'building-renovation',
     title: 'Building & Renovation',
+    serviceArea: 'Service · Pakistan',   
+areaServed: ['Pakistan'],
     description: 'Ground-up construction and renovation with rigorous quality control and craft execution.',
     icon: Hammer,
     details: ['Construction administration', 'Quality control', 'Heritage renovation', 'Structural retrofit'],
+    overview: 'A design concept is only truly meaningful if it successfully survives the construction process. For our projects in Karachi, we provide comprehensive, end-to-end management. We directly supervise on-site construction, executing premium grey structure work with rigorous material quality control and delivering high-end interior finishes. By coordinating directly with trusted local vendors and specialized subcontractors, we ensure that every construction detail is flawlessly executed to international standards—all without burdening you with the stress of daily site supervision.',
+    metaDescription: 'DESCORP provides complete design-and-build services in Karachi. We directly manage on-site supervision, premium gray structure building, and luxury interior finishing.',
+   howItWorks: [
+  { 
+    title: 'Turnkey Execution Plan', 
+    description: 'We develop detailed architectural blueprints alongside a comprehensive material specification matrix for your approval.' 
+  },
+  { 
+    title: 'Gray Structure Mobilization', 
+    description: 'Our on-site team breaks ground, directly sourcing high-grade raw materials and managing core structural foundation works.' 
+  },
+  { 
+    title: 'Luxury Finishing Sourcing', 
+    description: 'We procure premium interior materials, tiles, lighting, and custom woodwork through our trusted local and imported vendor network.' 
+  },
+  { 
+    title: 'Daily Site Supervision', 
+    description: 'Our project managers strictly monitor craftsmanship, enforce structural safety benchmarks, and handle continuous quality checks on the ground.' 
+  },
+],
+
+    scopeNote:
+  'For projects in Karachi, DESCORP directly manages on-site supervision, physical inspections, material quality control, and full construction execution. We handle everything from the initial gray structure build to the final luxury interior finishing.',
+faqs: [
+  { 
+    question: 'Do you physically supervise the construction site in Karachi?', 
+    answer: 'Yes, absolutely. Our dedicated project management team handles full-time, on-site physical supervision. We monitor labor, supervise both gray structure and finishing phases daily, and ensure strict alignment with the approved design.' 
+  },
+  { 
+    question: 'Do you provide the material and labor, or do I have to manage it?', 
+    answer: 'We provide complete turnkey design-and-build services. DESCORP sources premium construction materials (such as high-grade steel and cement for gray structures) and collaborates with our trusted network of skilled local sub-contractors and specialized artisans, taking the complete execution stress off your shoulders.' 
   },
   {
-    id: 's5',
-    title: 'Interior Design',
-    description: 'Complete interior environments where materiality, light, and proportion compose a unified whole.',
-    icon: Sofa,
-    details: ['Space planning', 'Material specification', 'Custom millwork', 'Lighting design'],
+    question: 'Can you work with an external contractor if I already have one?',
+    answer: 'While we prefer executing the project ourselves to ensure the highest finishing quality, we can provide design documentation and periodic on-site quality reviews to coordinate with your preferred licensed contractor in Karachi.'
+  }
+],
   },
+  
+
+ 
+ 
   {
-    id: 's6',
-    title: 'Planning & Zoning',
-    description: 'Navigating approvals, permits, and zoning compliance so your project clears regulation cleanly.',
-    icon: FileCheck,
-    details: ['Zoning analysis', 'Permit applications', 'Entitlement strategy', 'Agency coordination'],
-  },
-  {
-    id: 's7',
-    title: '3D Visualization',
-    description: 'Photoreal rendering and realtime visualization that lets you inhabit a space before it exists.',
-    icon: Box,
-    details: ['Photoreal rendering', 'Realtime walkthroughs', 'VR experiences', 'Animation'],
-  },
-  {
-    id: 's8',
-    title: 'Project Management',
-    description: 'Full-lifecycle delivery — schedule, budget, and coordination held to the highest standard.',
-    icon: ClipboardList,
-    details: ['Schedule management', 'Budget control', 'Consultant coordination', 'Risk mitigation'],
-  },
-  {
-    id: 's9',
-    title: 'Site Master Planning',
-    description: 'Large-scale land planning that organizes circulation, density, and program across entire sites.',
-    icon: Map,
-    details: ['Land use studies', 'Circulation planning', 'Density models', 'Phasing strategy'],
-  },
+  id: 's8',
+  slug: 'project-management',
+  title: 'Project Management',
+  serviceArea: 'On-Site Service · Pakistan',   
+  areaServed: ['Pakistan'],
+  description: 'Full-lifecycle on-site delivery — schedule, budget, and labor coordination held to the highest standard.',
+  icon: ClipboardList,
+  details: ['Schedule management', 'Budget control', 'Contractor coordination', 'Quality assurance & risk mitigation'],
+  overview:
+    'Bringing a design to life requires flawless execution. For our Pakistan-based projects, DESCORP handles the complete project lifecycle directly on site. We manage timelines, control construction budgets, and coordinate all local sub-contractors and vendors on the ground to guarantee that project execution matches our exact design standards without any delays.',
+  metaDescription:
+    'Professional on-site project management services in Karachi, Pakistan. DESCORP controls construction budgets, monitors timelines, and coordinates site labor.',
+  howItWorks: [
+    { title: 'Baseline & Budgeting', description: 'We establish strict project timelines and material budget baselines before breaking ground.' },
+    { title: 'On-Site Coordination', description: 'Our managers directly supervise site labor, technical consultants, and material deliveries on the ground.' },
+    { title: 'Progress Tracking', description: 'We conduct regular on-site milestones audits and provide transparent progress reports to you.' },
+    { title: 'Quality & Risk Control', description: 'Continuous structural quality checks and active risk management to prevent budget or timeline overflows.' },
+  ],
+  scopeNote:
+    'For projects in Pakistan, DESCORP provides full on-the-ground management, day-to-day site coordination, and vendor oversight. Physical labor and raw material costs are billed based on approved project baselines.',
+  faqs: [
+    { question: 'Will you physically manage and oversee my construction site in Karachi?', answer: 'Yes, absolutely. Our project management service is entirely on-site. We deploy dedicated supervisors to manage day-to-day ground operations, coordinate contractors, and ensure strict quality control.' },
+    { question: 'How do you control the construction budget and avoid hidden costs?', answer: 'We lock in a comprehensive material and labor cost matrix during the initial phase. Any potential market price risks are calculated beforehand, and regular budget reviews ensure the project stays within the approved financial baseline.' },
+  ],
+},
+
+
 ];
 
 export const stats = [

@@ -11,8 +11,7 @@ export function ProjectCard({
 }) {
   return (
     <Link
-      // href={`/projects/${project.id}`}
-            href={`/projects/${project.slug}`}
+      href={`/projects/${project.slug}`}
       className="group relative block overflow-hidden bg-primary"
     >
       <div className="relative overflow-hidden aspect-[4/5]">

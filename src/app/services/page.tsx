@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { PageHero } from '@/components/PageHero';
 import { Reveal } from '@/components/Reveal';
 import { Eyebrow } from '@/components/Layout';
@@ -6,11 +7,13 @@ import { services, processSteps } from '@/data/content';
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Architecture & Interior Design Services",
+  // title: "Architecture & Interior Design Services",
 
-  description:
-    "Explore DESCORP's architecture, interior design, planning, visualization, and consultancy services.",
-
+  // description:
+  //   "Explore DESCORP's architecture, interior design, planning, visualization, and consultancy services.",
+title: "Architecture & Interior Design Services | DESCORP",
+description:
+  "Explore DESCORP's architecture, interior design, planning, visualization, and project management services in Pakistan, plus remote design services for USA clients.",
   alternates: {
     canonical: "/services",
   },
@@ -24,14 +27,17 @@ export default function ServicesPage() {
         title="Full-spectrum architectural practice."
         subtitle="From first consultation to final handover, we deliver every discipline under one roof — unified by a single design language and held to a single standard."
       />
-
+{/* bg-secondary/10 */}
       {/* Services grid */}
       <section className="bg-primary py-section">
         <div className="container-content">
-          <div className="grid grid-cols-1 gap-px bg-secondary/10 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-px  sm:grid-cols-2 lg:grid-cols-3">
             {services.map((service, i) => (
               <Reveal key={service.id} delay={(i % 3) * 80}>
-                <div className="group relative h-full bg-primary p-7 transition-colors duration-500 hover:bg-primary-200 md:p-8">
+                <Link
+                  href={`/services/${service.slug}`}
+                  className="group relative block h-full bg-primary p-7 transition-colors duration-500 hover:bg-primary-200 md:p-8"
+                >
                   <div className="font-mono text-sm text-secondary/30 transition-colors duration-500 group-hover:text-accent/50">
                     {String(i + 1).padStart(2, '0')}
                   </div>
@@ -42,21 +48,103 @@ export default function ServicesPage() {
                   <p className="mt-3 text-sm leading-relaxed text-secondary/60">
                     {service.description}
                   </p>
-                  <ul className="mt-5 space-y-2">
+                  {/* <ul className="mt-5 space-y-2">
                     {service.details.map((detail) => (
                       <li key={detail} className="flex items-center gap-2.5 text-xs text-secondary/50">
                         <span className="h-1 w-1 bg-accent" />
                         {detail}
                       </li>
                     ))}
-                  </ul>
+                  </ul> */}
+                  <span className="mt-5 inline-block text-xs font-semibold uppercase tracking-wider text-accent opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                    Learn More →
+                  </span>
                   <div className="absolute bottom-0 left-0 h-0.5 w-0 bg-accent transition-all duration-500 group-hover:w-full" />
-                </div>
+                </Link>
               </Reveal>
             ))}
           </div>
         </div>
       </section>
+
+{/* USA Remote Services */}
+<section className="bg-primary-100 py-section">
+  <div className="container-content">
+    <div className="max-w-2xl">
+      <Reveal>
+        <Eyebrow>USA · Remote Services</Eyebrow>
+      </Reveal>
+
+      <Reveal delay={100}>
+        <h2 className="mt-5 font-display text-heading text-secondary">
+          Remote architecture & interior design for USA clients.
+        </h2>
+      </Reveal>
+
+      <Reveal delay={150}>
+        <p className="mt-5 text-base leading-relaxed text-secondary/60 md:text-lg">
+          Work with DESCORP remotely for architecture consultation, interior
+          design, and 3D visualization services across the United States.
+        </p>
+      </Reveal>
+    </div>
+
+    <div className="mt-12 grid grid-cols-1 gap-px bg-secondary/10 sm:grid-cols-2 lg:grid-cols-3">
+      {[
+        {
+          number: '01',
+          title: 'Remote Architecture Consultation',
+          description:
+            'Professional architectural guidance, concept development, and design consultation delivered remotely for USA clients.',
+          href: '/usa/remote-architecture-consultation',
+        },
+        {
+          number: '02',
+          title: 'Remote Interior Design Services',
+          description:
+            'Remote interior design services including space planning, design direction, material concepts, and visual development.',
+          href: '/usa/remote-interior-design',
+        },
+        {
+          number: '03',
+          title: 'Remote 3D Visualization Services',
+          description:
+            'Photorealistic 3D architectural and interior visualizations to help USA clients clearly understand their design.',
+          href: '/usa/remote-3d-visualization',
+        },
+      ].map((service, i) => (
+        <Reveal key={service.href} delay={(i % 3) * 80}>
+          <Link
+            href={service.href}
+            className="group relative block h-full bg-primary p-7 transition-colors duration-500 hover:bg-primary-200 md:p-8"
+          >
+            <div className="font-mono text-sm text-secondary/30 transition-colors duration-500 group-hover:text-accent/50">
+              {service.number}
+            </div>
+
+            <h3 className="mt-6 font-display text-lg font-bold text-secondary">
+              {service.title}
+            </h3>
+
+            <p className="mt-3 text-sm leading-relaxed text-secondary/60">
+              {service.description}
+            </p>
+
+            <span className="mt-5 inline-block text-xs font-semibold uppercase tracking-wider text-accent opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+              Explore Service →
+            </span>
+
+            <div className="absolute bottom-0 left-0 h-0.5 w-0 bg-accent transition-all duration-500 group-hover:w-full" />
+          </Link>
+        </Reveal>
+      ))}
+    </div>
+  </div>
+</section>
+
+
+
+
 
       {/* Process */}
       <section className="bg-primary-100 py-section">
