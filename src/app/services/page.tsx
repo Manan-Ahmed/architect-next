@@ -7,10 +7,6 @@ import { services, processSteps } from '@/data/content';
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  // title: "Architecture & Interior Design Services",
-
-  // description:
-  //   "Explore DESCORP's architecture, interior design, planning, visualization, and consultancy services.",
 title: "Architecture & Interior Design Services | DESCORP",
 description:
   "Explore DESCORP's architecture, interior design, planning, visualization, and project management services in Pakistan, plus remote design services for USA clients.",
@@ -27,8 +23,7 @@ export default function ServicesPage() {
         title="Full-spectrum architectural practice."
         subtitle="From first consultation to final handover, we deliver every discipline under one roof — unified by a single design language and held to a single standard."
       />
-{/* bg-secondary/10 */}
-      {/* Services grid */}
+
       <section className="bg-primary py-section">
         <div className="container-content">
           <div className="grid grid-cols-1 gap-px  sm:grid-cols-2 lg:grid-cols-3">
@@ -48,14 +43,7 @@ export default function ServicesPage() {
                   <p className="mt-3 text-sm leading-relaxed text-secondary/60">
                     {service.description}
                   </p>
-                  {/* <ul className="mt-5 space-y-2">
-                    {service.details.map((detail) => (
-                      <li key={detail} className="flex items-center gap-2.5 text-xs text-secondary/50">
-                        <span className="h-1 w-1 bg-accent" />
-                        {detail}
-                      </li>
-                    ))}
-                  </ul> */}
+                  
                   <span className="mt-5 inline-block text-xs font-semibold uppercase tracking-wider text-accent opacity-0 transition-opacity duration-500 group-hover:opacity-100">
                     Learn More →
                   </span>
@@ -67,7 +55,6 @@ export default function ServicesPage() {
         </div>
       </section>
 
-{/* USA Remote Services */}
 <section className="bg-primary-100 py-section">
   <div className="container-content">
     <div className="max-w-2xl">
@@ -146,7 +133,7 @@ export default function ServicesPage() {
 
 
 
-      {/* Process */}
+   
       <section className="bg-primary-100 py-section">
         <div className="container-content">
           <div className="max-w-2xl">
@@ -186,7 +173,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* CTA */}
+  
       <section className="bg-primary py-section">
         <div className="container-content">
           <Reveal>
