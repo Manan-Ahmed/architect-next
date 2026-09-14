@@ -32,39 +32,14 @@ export type Project = {
 
 
 
-// type Service = {
-//   // ...existing fields
-//   credentials?: {
-//     summary: string;
-//     badges: { label: string; detail: string }[];
-//   };
-//   portfolioPreview?: {
-//     title: string;
-//     image: string;
-//     location?: string;
-//     href?: string;
-//   }[];
-//   testimonials?: {
-//     name: string;
-//     quote: string;
-//     project: string;
-//     rating?: number; // default 5
-//   }[];
-//   packages?: {
-//     name: string;
-//     startingPrice: string;
-//     description: string;
-//     features: string[];
-//   }[];
-//     serviceArea?: string;
-//   areaServed?: string[]
-// };
+import type { ElementType } from 'react';
+
 type Service = {
   id: string;
   slug: string;
   title: string;
   description: string;
-  icon: React.ElementType;
+  icon: ElementType;
   details: string[];
   overview: string;
   metaDescription: string;
@@ -105,7 +80,6 @@ type Service = {
   serviceArea?: string;
   areaServed?: string[];
 };
-
 export type TeamMember = {
   name: string;
   role: string;
