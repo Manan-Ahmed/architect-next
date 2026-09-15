@@ -19,7 +19,7 @@ export function Testimonials() {
 
      <Reveal delay={100}>
        <h2 className="mt-5 font-display text-heading text-secondary">
-         What clients across the Pakistan say.
+        What Clients Say.
        </h2>
      </Reveal>
 
