@@ -484,7 +484,7 @@ const pakistanCities = [
   'Other',
 ];
 
-export function ContactSectionUsa() {
+export function ContactSection() {
   const formRef = useRef<HTMLFormElement>(null);
 
   const [submitted, setSubmitted] = useState(false);
