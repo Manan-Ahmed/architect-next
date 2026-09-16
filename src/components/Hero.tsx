@@ -10,7 +10,7 @@ export function Hero() {
       {/* Background image */}
       <div className="absolute inset-0">
 <Image
-  src="/interior/1.webp"
+  src="/farm-house/farmhouse1.webp"
   alt="Modern interior"
   fill
   priority
@@ -21,7 +21,7 @@ export function Hero() {
   className="object-cover"
 />
 
-        <div className="absolute inset-0 bg-primary/60" />
+        <div className="absolute inset-0" />
 
         <div
           className="absolute inset-0"
