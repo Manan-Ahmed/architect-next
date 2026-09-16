@@ -245,7 +245,7 @@ export default function USAPage() {
         <Reveal delay={250}>
           <div className="mt-8">
             <Button variant="primary" to="#usa-contact">
-              Start a Project
+             Book a Free Consultation
             </Button>
           </div>
         </Reveal>
