@@ -180,13 +180,33 @@ export default function USAPage() {
             </p>
           </Reveal>
 
-          <Reveal delay={240}>
+            <Reveal delay={220}>
+  <p className="mt-4 max-w-2xl text-sm leading-relaxed text-secondary-100/60 md:text-base">
+    We deliver remote consultation, interior design, and 3D visualization to US clients — with construction execution based in Pakistan for international projects.
+  </p>
+</Reveal>
+
+           <Reveal delay={280}>
+  <div className="mt-9">
+    <Button variant="primary" to="#usa-contact">
+      Start a Project
+    </Button>
+  </div>
+</Reveal>
+
+<Reveal delay={320}>
+  <p className="mt-6 font-mono text-xs uppercase tracking-widest text-secondary-100/50">
+    10+ Years · 60+ Projects Delivered · 6+ Countries
+  </p>
+</Reveal>
+          
+          {/* <Reveal delay={240}>
             <div className="mt-9">
               <Button variant="primary" to="#usa-contact">
                 Start a Project
               </Button>
             </div>
-          </Reveal>
+          </Reveal> */}
         </div>
       </section>
 
