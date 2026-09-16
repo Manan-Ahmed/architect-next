@@ -16,7 +16,7 @@ const footerLinks = {
   { label: 'Project Management', to: '/services/project-management' },
 
   { label: 'USA Remote Architectural Consultation', to: '/usa/remote-architecture-consultation' },
-  { label: 'USA Remote Interior Design Consultation', to: '/usa/remote-interior-design-consultation' },
+  { label: 'USA Remote Interior Design Consultation', to: '/usa/remote-interior-design' },
   { label: '3D Visualization', to: '/usa/remote-3d-visualization' },
 ],
   Contact: [
