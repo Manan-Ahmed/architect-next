@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -56,11 +57,9 @@ export const metadata: Metadata = {
     {
       name: "DESCORP",
       url: "https://thedescorp.com",
-      
     },
   ],
   creator: "DESCORP",
-
   publisher: "DESCORP",
 
   alternates: {
@@ -85,7 +84,6 @@ export const metadata: Metadata = {
     description:
       "Luxury architecture and interior design studio creating iconic residential and commercial spaces.",
     siteName: "DESCORP",
-
     images: [
       {
         url: "/DESCORP LOGO PNG.png",
@@ -115,7 +113,6 @@ const organizationSchema = {
   "@type": "Organization",
   name: "DESCORP",
   url: "https://thedescorp.com",
-  
   logo: "https://thedescorp.com/icon.png",
   description:
     "Luxury Architecture & Interior Design Studio.",
@@ -161,6 +158,21 @@ export default function RootLayout({
       className={`${inter.variable} ${montserrat.variable} ${jetbrainsMono.variable}`}
     >
       <head>
+        {/* Google Tag Manager (GTM) */}
+        <Script
+          id="google-tag-manager"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),dl=l!='&l'!=l?'&l='+l:'';j.async=true;j.src=
+              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-TRKDNHDF');`,
+          }}
+        />
+        {/* End Google Tag Manager */}
+
         <link
           rel="preload"
           as="image"
@@ -170,6 +182,17 @@ export default function RootLayout({
         <meta name="p:domain_verify" content="7324c15085c245bd0905be7b0f218492"/>
       </head>
       <body>
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-TRKDNHDF"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          ></iframe>
+        </noscript>
+        {/* End Google Tag Manager (noscript) */}
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
