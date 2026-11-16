@@ -47,7 +47,8 @@ const contactInfo = [
     icon: MapPin,
     label: 'Studio',
     value:
-      'Office No. 403, Imperial Trade Tower, 68-C, Street 7, Jami Commercial Area, Phase VII, DHA, Karachi South, Karachi, Pakistan 75500',
+      "4th Floor, 68-C, Imperial Trade Tower, Street 11, Lane 7, Seher Commercial Area,DHA Phase 7, Karachi 75500, Pakistan, "
+      // 'Office No. 403, Imperial Trade Tower, 68-C, Street 7, Jami Commercial Area, Phase VII, DHA, Karachi South, Karachi, Pakistan 75500',
   },
 ];
 
