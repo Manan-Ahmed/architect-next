@@ -410,7 +410,7 @@ export function ContactSection() {
 
                       <div className="relative">
                         <select
-                          name="location"
+                          name="property_location"
                           required
                           value={form.location}
                           onChange={(e) =>
@@ -449,7 +449,7 @@ export function ContactSection() {
 
                       <input
                         type="text"
-                        name="location"
+                        name="property_location"
                         required
                         value={form.location}
                         onChange={(e) =>
