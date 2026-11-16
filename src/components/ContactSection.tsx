@@ -326,7 +326,7 @@ export function ContactSection() {
 
                     <div className="relative">
                       <select
-                        name="country"
+                        name="property_country"
                         required
                         value={form.country}
                         onChange={(e) =>
@@ -371,7 +371,7 @@ export function ContactSection() {
 
                       <div className="relative">
                         <select
-                          name="location"
+                          name="property_location"
                           required
                           value={form.location}
                           onChange={(e) =>
