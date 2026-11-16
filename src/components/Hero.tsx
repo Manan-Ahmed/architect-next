@@ -46,7 +46,7 @@ export function Hero() {
 
 <h1 className="mt-6 font-display text-display-1 text-secondary-100">
   Architecture & Interior Design Studio
-  <span className="text-accent"> in Karachi.</span>
+  <span className="text-accent"> in Karachi, Pakistan.</span>
 </h1>
 
 <p className="mt-4 font-display text-xl text-secondary-100/90 md:text-2xl">
