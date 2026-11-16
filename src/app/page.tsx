@@ -35,7 +35,7 @@ import { Metadata } from "next";
 
 export const metadata = {
   metadataBase: new URL("https://thedescorp.com"),
-  title: "DESCORP | Architects & Interior Designers in Karachi",
+  title: "DESCORP | Architects & Designers in Karachi, Pakistan",
   description:
     "Residential, commercial & hospitality architecture, interior design and construction in Karachi. Homes, farmhouses, hotels, offices. View our projects.",
   alternates: { canonical: "/" },
