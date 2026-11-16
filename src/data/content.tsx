@@ -368,9 +368,9 @@ faqs: [
 ];
 
 export const stats = [
-  { value: '6+', label: 'Years of Practice' },
+  { value: '8+', label: 'Years of Practice' },
   { value: '60+', label: 'Projects Delivered' },
-  { value: '6+', label: 'Countries' },
+  { value: '2+', label: 'Countries' },
   {value: '40+', label: 'CLIENTS SERVED'},
     {value: '100K+', label: 'SQ. FT. DESIGNED'},
 ];
