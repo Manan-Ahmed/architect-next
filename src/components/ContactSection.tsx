@@ -50,34 +50,6 @@ const contactInfo = [
   },
 ];
 
-const projectTypes = [
-  'Custom Home',
-  'Residential Architecture',
-  'Interior Design',
-  'Renovation',
-  'Commercial',
-  'Hospitality',
-  '3D Visualization',
-  'Other',
-];
-
-const budgetRanges = [
-  'Under $25,000',
-  '$25,000 – $50,000',
-  '$50,000 – $100,000',
-  '$100,000 – $250,000',
-  '$250,000+',
-  'Not sure yet',
-];
-
-const timelines = [
-  'As soon as possible',
-  'Within 1–3 months',
-  '3–6 months',
-  '6–12 months',
-  'Just exploring',
-];
-
 const usaStates = [
   'Alabama',
   'Alaska',
