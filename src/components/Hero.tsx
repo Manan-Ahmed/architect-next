@@ -9,19 +9,15 @@ export function Hero() {
     >
       {/* Background image */}
       <div className="absolute inset-0">
-<Image
-  src="/farm-house/farmhouse1.webp"
-  alt="Modern interior"
-  fill
-  priority
-  loading="eager"
-  fetchPriority="high"
-  quality={75}
-  sizes="(max-width: 768px) 100vw, 100vw"
-  className="object-cover"
-/>
-
-        <div className="absolute inset-0" />
+        <Image
+          src="/farm-house/farmhouse1.webp"
+          alt="Modern luxury farmhouse designed by DESCORP architects in Karachi"
+          fill
+          priority
+          quality={70}
+          sizes="100vw"
+          className="object-cover"
+        />
 
         <div
           className="absolute inset-0"
@@ -38,35 +34,35 @@ export function Hero() {
       {/* Content */}
       <div className="container-content relative z-10 pt-20">
         <div className="max-w-3xl">
-          <div>
           <span className="eyebrow text-accent">
-  <span className="h-px w-8 bg-accent" />
-  DESCORP · DHA Phase 7, Karachi
-</span>
+            <span className="h-px w-8 bg-accent" />
+            DESCORP · DHA Phase 7, Karachi
+          </span>
 
-<h1 className="mt-6 font-display text-display-1 text-secondary-100">
-  Architecture & Interior Design Studio
-  <span className="text-accent"> in Karachi, Pakistan.</span>
-</h1>
+          <h1 className="mt-6 font-display text-display-1 text-secondary-100">
+            Architecture & Interior Design Studio
+            <span className="text-accent"> in Karachi, Pakistan.</span>
+          </h1>
 
-<p className="mt-4 font-display text-xl text-secondary-100/90 md:text-2xl">
-  The Art of Building Tomorrow.
-</p>
+          <p className="mt-4 font-display text-xl text-secondary-100/90 md:text-2xl">
+            The Art of Building Tomorrow.
+          </p>
 
-<p className="mt-8 max-w-xl text-base leading-relaxed text-secondary/80 md:text-lg">
-  DESCORP is a Karachi-based architecture, interior design and construction
-  studio delivering residential, commercial and hospitality projects, from
-  homes and farmhouses to hotels and offices. We manage every stage, from
-  concept and planning to execution and final handover.
-</p>
+          <p className="mt-8 max-w-xl text-base leading-relaxed text-secondary/80 md:text-lg">
+            DESCORP is a Karachi-based architecture, interior design and
+            construction studio delivering residential, commercial and
+            hospitality projects, from homes and farmhouses to hotels and
+            offices. We manage every stage, from concept and planning to
+            execution and final handover.
+          </p>
 
-          <div className="mt-10 flex flex-wrap gap-4 mb-4">
+          <div className="mt-10 mb-4 flex flex-wrap gap-4">
             <Button variant="primary" to="/projects">
               View Projects
             </Button>
 
             <Button variant="secondary" to="/contact">
-              Contact Us
+              Start a Project
             </Button>
           </div>
         </div>
@@ -80,7 +76,7 @@ export function Hero() {
           </span>
 
           <div className="relative h-12 w-px overflow-hidden bg-secondary/20">
-            <div className="absolute inset-x-0 top-0 h-4 bg-accent animate-[fadeUp_2s_ease-in-out_infinite]" />
+            <div className="absolute inset-x-0 top-0 h-4 animate-[fadeUp_2s_ease-in-out_infinite] bg-accent" />
           </div>
         </div>
       </div>
