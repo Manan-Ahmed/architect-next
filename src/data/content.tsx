@@ -368,7 +368,7 @@ faqs: [
 ];
 
 export const stats = [
-  { value: '10+', label: 'Years of Practice' },
+  { value: '6+', label: 'Years of Practice' },
   { value: '60+', label: 'Projects Delivered' },
   { value: '6+', label: 'Countries' },
   {value: '40+', label: 'CLIENTS SERVED'},
