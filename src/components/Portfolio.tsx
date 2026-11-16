@@ -25,8 +25,9 @@ export function FeaturedProjects() {
           </div>
           <Reveal delay={150}>
             <p className="max-w-md text-sm leading-relaxed text-secondary/60">
-              A curated selection of recent commissions spanning residential, commercial,
-              and interior architecture across four continents.
+              A selection of our recent residential, commercial and hospitality projects in Karachi, from farmhouses and apartments to hotels.
+              {/* A curated selection of recent commissions spanning residential, commercial,
+              and interior architecture across four continents. */}
             </p>
           </Reveal>
         </div>
