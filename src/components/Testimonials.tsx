@@ -64,7 +64,7 @@ export function Testimonials() {
 
           <div className="mt-6 border-t border-secondary/10 pt-4">
             <div className="text-sm font-bold text-secondary">
-             Rachel S.
+Saad
             </div>
             <div className="text-xs text-secondary/50">
              Architectural CGI and Walkthroughs
@@ -88,7 +88,7 @@ export function Testimonials() {
 
           <div className="mt-6 border-t border-secondary/10 pt-4">
             <div className="text-sm font-bold text-secondary">
-              Tom B.
+Rashid
             </div>
             <div className="text-xs text-secondary/50">
               Interior 3D Visualization Services
