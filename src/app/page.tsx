@@ -9,27 +9,43 @@ import { Testimonials } from '../components/Testimonials';
 import Link from 'next/link';
 import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Luxury Architecture & Interior Design Studio",
+// export const metadata: Metadata = {
+//   title: "Luxury Architecture & Interior Design Studio",
+//   description:
+//     "DESCORP is a luxury architecture and interior design studio creating exceptional residential, commercial, and hospitality spaces worldwide.",
+
+//   alternates: {
+//     canonical: "/",
+//   },
+
+//   openGraph: {
+//     title: "Luxury Architecture & Interior Design Studio | DESCORP",
+//     description:
+//       "Luxury architecture and interior design studio creating exceptional spaces.",
+//     url: "https://thedescorp.com",
+//     images: [
+//       {
+//         url: "/og-image.jpg",
+//         width: 1200,
+//         height: 600,
+//       },
+//     ],
+//   },
+// };
+
+export const metadata = {
+  metadataBase: new URL("https://thedescorp.com"),
+  title: "DESCORP | Architects & Interior Designers in Karachi",
   description:
-    "DESCORP is a luxury architecture and interior design studio creating exceptional residential, commercial, and hospitality spaces worldwide.",
-
-  alternates: {
-    canonical: "/",
-  },
-
+    "Residential, commercial & hospitality architecture, interior design and construction in Karachi. Homes, farmhouses, hotels, offices. View our projects.",
+  alternates: { canonical: "/" },
   openGraph: {
-    title: "Luxury Architecture & Interior Design Studio | DESCORP",
+    title: "DESCORP | Architects & Interior Designers in Karachi",
     description:
-      "Luxury architecture and interior design studio creating exceptional spaces.",
+      "Residential, commercial & hospitality architecture, interior design and construction in Karachi.",
     url: "https://thedescorp.com",
-    images: [
-      {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 600,
-      },
-    ],
+    siteName: "DESCORP",
+    images: ["/og-image.jpg"],
   },
 };
 export default function HomePage() {
